@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXCORE - Global Energy Services</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency-systems-filled/48/003366/n.png">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        #main-header {
+            background: #ffffff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #main-header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #003366; /* Corporate Blue */
+        }
+
+        #navbar ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        #navbar ul li {
+            display: inline;
+            margin-left: 25px;
+        }
+
+        #navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        #navbar a:hover, .navbar a.active {
+            color: #005f9e; /* Brighter Blue for hover */
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0, 21, 41, 0.7), rgba(0, 21, 41, 0.7)), url('maria-lupan-hy97yy3e03A-unsplash.jpg') no-repeat center center/cover;
+            height: 80vh;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 5%;
+        }
+
+        #hero h1 {
+            font-size: 4rem;
+            max-width: 60%;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 50%;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #005f9e;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #004c8c;
+        }
+
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        #about img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        #about h3 {
+            font-size: 2rem;
+            color: #003366;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: #f7f9fa;
+        }
+        
+        #services .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-card .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Contact Section */
+        #contact .container {
+            max-width: 800px;
+        }
+
+        #contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        #contact-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        #contact-form button {
+            background: #005f9e;
+            color: #fff;
+            border: 0;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: auto;
+            justify-self: start;
+        }
+
+        #contact-form button:hover {
+            background: #004c8c;
+        }
+
+        /* Footer */
+        #main-footer {
+            background: #001529;
+            color: #ccc;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        
+        #main-footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">NEXCORE</div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Pioneering Solutions for the Global Energy Industry</h1>
+        <p>Driving efficiency and performance in oil facility procurement, supply, and maintenance through technology and innovation.</p>
+        <a href="#services" class="btn">Explore Our Services</a>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h3>Welcome to NEXCORE</h3>
+                    <p>NEXCORE is a dynamic oil service company committed to powering the energy sector. We specialize in providing integrated solutions for the procurement, supply, and maintenance of oil facilities. Our approach combines deep industry expertise with a relentless focus on safety, quality, and operational excellence. We partner with our clients to enhance their asset performance and drive sustainable growth in a complex global market.</p>
+                </div>
+                <div>
+                    <!-- Replace with a high-quality image of your team or operations -->
+                    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" alt="NEXCORE Team Meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <p class="section-subtitle">We provide a comprehensive suite of services designed to optimize the entire lifecycle of your oil and gas assets.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <!-- Replace with a modern icon for Procurement -->
+                    <img src="https://img.icons8.com/ios-filled/100/003366/purchase-order.png" alt="Procurement Icon" class="icon">
+                    <h3>Strategic Procurement</h3>
+                    <p>Leveraging our global network, we source and deliver high-quality, mission-critical equipment and materials, ensuring compliance and cost-effectiveness for your projects.</p>
+                </div>
+                <div class="service-card">
+                    <!-- Replace with a modern icon for Supply Chain -->
+                    <img src="https://img.icons8.com/ios-filled/100/003366/container-truck.png" alt="Supply Icon" class="icon">
+                    <h3>Integrated Supply Chain</h3>
+                    <p>Our robust supply chain solutions guarantee the timely and secure delivery of resources to your operations, minimizing downtime and maximizing asset productivity.</p>
+                </div>
+                <div class="service-card">
+                    <!-- Replace with a modern icon for Maintenance -->
+                    <img src="https://img.icons8.com/ios-filled/100/003366/maintenance.png" alt="Maintenance Icon" class="icon">
+                    <h3>Asset Maintenance</h3>
+                    <p>We deliver comprehensive maintenance programs, from preventative strategies to corrective interventions, ensuring the integrity and longevity of your oil facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We are ready to support your operational needs. Contact us to learn how NEXCORE can add value to your projects.</p>
+             <!-- The form remains functional with the same contact.php backend -->
+            <form id="contact-form" action="contact.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="7" placeholder="Your Message" class="full-width" required></textarea>
+                <button type="submit" class="btn full-width">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <p>Copyright &copy; 2025 NEXCORE | Powering the Future of Energy. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
