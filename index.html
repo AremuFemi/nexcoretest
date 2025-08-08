@@ -245,6 +245,75 @@
             margin: 0;
         }
 
+        /* ======================================================= */
+/*  MOBILE RESPONSIVE STYLES
+/* ======================================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    /* Header Adjustments */
+    #main-header .container {
+        flex-direction: column;
+    }
+    
+    #main-header .logo {
+        margin-bottom: 1rem;
+    }
+    
+    #navbar ul li {
+        margin-left: 15px;
+    }
+    
+    /* Hero Section Adjustments */
+    #hero {
+        height: 70vh;
+        align-items: center; /* Center text on mobile */
+        text-align: center;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem; /* Reduce font size for main title */
+        max-width: 100%;
+    }
+
+    #hero p {
+        font-size: 1rem; /* Reduce font size for paragraph */
+        max-width: 90%;
+    }
+
+    /* General Section Adjustments */
+    .section-title {
+        font-size: 2.2rem; /* Reduce section title font size */
+    }
+
+    /* About Us - Stack columns vertically */
+    #about .about-content {
+        grid-template-columns: 1fr; /* Change from 2 columns to 1 */
+        text-align: center;
+    }
+    
+    #about .about-content img {
+        grid-row: 1; /* Make image appear first on mobile */
+        margin-bottom: 2rem;
+    }
+    
+    /* Services Section Adjustments */
+    #services .service-card {
+        padding: 30px 25px; /* Adjust padding inside cards */
+    }
+
+    /* Contact Form - Stack columns vertically */
+    #contact-form {
+        grid-template-columns: 1fr; /* Change from 2 columns to 1 */
+    }
+
+    #contact-form button {
+        width: 100%; /* Make button full width */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -331,3 +400,4 @@
 </body>
 
 </html>
+
